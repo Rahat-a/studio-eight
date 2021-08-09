@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Eight - Create Website HTML CSS JavaScript</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+         <div class="navbar">
+            <img src="./img/logo.png" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+            <img src="./img/menu.png" class="menu">
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="text-box">
+                    <h5>My Practice</h5>
+                    <h1>My Another <b>Website</b><br>Practice With HTML CSS <br>& <b>JavaScript</b></h1>
+                 </div>
+                 <img src="./img/circle.png" class="icon1">
+                 <img src="./img/circle.png" class="icon2">
+                 <img src="./img/square.png" class="icon3">
+            </div>
+            <div class="col">
+                <div class="gallery">
+                    <img src="./img/pic2.jpg" id="Gallery">
+
+                    <ul>
+                        <li class="btn">01</li>
+                        <li class="btn active">02</li>
+                        <li class="btn">03</li>
+                        <li class="btn">04</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+         <img src="./img/circle.png" class="icon4">
+         <img src="./img/square.png" class="icon5">
+     </div>
+
+
+     <div id="cursor"></div>
+
+
+
+<script>
+
+    var cursor = document.getElementById("cursor");
+
+    document.onmousemove = function(e){
+        cursor.style.left = (e.pageX - 25) + "px";
+        cursor.style.top = (e.pageY - 25) + "px";
+        cursor.style.display = "block"
+    }
+
+</script>
+
+
+
+
+<script>
+
+    var btn = document.getElementsByClassName("btn");
+    var Gallery = document.getElementById("Gallery");
+
+    var img = new Array(
+        " img/pic1.jpg ",
+        " img/pic2.jpg ",
+        " img/pic3.jpg ",
+        " img/pic4.jpg "
+    );
+
+
+    for(let i=0; i<btn.length; i++){
+        btn[i].onclick = function(){
+            Gallery.src = img[i];
+            let current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace("active", "");
+            this.className += " active";
+        };
+    }
+
+</script>
+
+
+</body>
+</html>
